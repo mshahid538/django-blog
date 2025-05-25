@@ -1,0 +1,16 @@
+colors
+--light tan
+cdc9c0
+
+---dark tan
+8f817e
+
+---dark tan
+2d2b2c
+
+
+text grey
+9e9493
+
+text off white
+eee6e4

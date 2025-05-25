@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Blog Detail -->
+<div class="container content-space-2 content-space-lg-3">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Blog -->
+      <article class="card card-bordered h-100">
+        {% if post.image %}
+        <div class="card-img-top">
+          <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        <div class="card-body">
+          <div class="mb-4">
+            <h1 class="card-title">{{ post.title }}</h1>
+            <p class="text-muted">{{ post.created_at|date:"F j, Y" }}</p>
+          </div>
+          <div class="card-text">
+            {{ post.content|linebreaks }}
+          </div>
+        </div>
+      </article>
+      <!-- End Blog -->
+    </div>
+    <!-- End Col -->
+
+    <div class="col-lg-4">
+      <!-- Sidebar -->
+      <div class="card card-bordered">
+        <div class="card-body">
+          <h4 class="card-title">About the Blog</h4>
+          <p class="card-text">Insights and thoughts on mental health, therapy, and personal growth from Michael Goldman, LCSW.</p>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Row -->
+</div>
+<!-- End Blog Detail -->
+{% endblock %} 

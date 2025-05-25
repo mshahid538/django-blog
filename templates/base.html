@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>{% block title %}M. Goldman Therapy{% endblock %}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'logos/1.png' %}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=VT323&display=swap');
+    body {
+      --bs-font-sans-serif: 'Crimson Text', serif;
+      --bs-body-font-family: var(--bs-font-sans-serif);
+      --bs-font-monospace: 'VT323', monospace;
+    }
+  </style>
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'dist/assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/assets/vendor/aos/dist/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/assets/vendor/swiper/swiper-bundle.min.css' %}">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="{% static 'dist/assets/css/theme.min.css' %}">
+  <link rel="stylesheet" href="{% static 'custom.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/assets/vendor/nouislider/dist/nouislider.min.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-dark bg-theme2 navbar-show-hide"
+          data-hs-header-options='{
+            "fixMoment": 500,
+            "fixEffect": "slide"
+          }'>
+    <div class="container-fluid">
+      <nav class="js-mega-menu navbar-nav-wrap">
+        <!-- Default Logo -->
+        <a class="navbar-brand my-2" href="{% url 'home' %}" aria-label="Front">
+          <img class="navbar-brand-logo" src="{% static 'logos/1white.png' %}" alt="Logo">
+        </a>
+        <!-- End Default Logo -->
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-default">
+            <i class="bi-list"></i>
+          </span>
+          <span class="navbar-toggler-toggled">
+            <i class="bi-x"></i>
+          </span>
+        </button>
+        <!-- End Toggler -->
+      
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="navbar-absolute-top-scroller">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}#reviewSection">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}#faqs">FAQs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+              </li>
+              
+              <!-- Button -->
+              <li class="nav-item">
+                <a class="btn btn-theme2 btn-transition" href="tel:9172936247" target="_blank">(917)293-6247</a>
+              </li>
+              <!-- End Button -->
+            </ul>
+          </div>
+        </div>
+        <!-- End Collapse -->
+      </nav>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    {% block content %}{% endblock %}
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-sm-6">
+            <p class="footer-copyright">© 2024 M. Goldman Therapy. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- JS Global Compulsory -->
+  <script src="{% static 'dist/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'dist/assets/vendor/hs-header/dist/hs-header.min.js' %}"></script>
+  <script src="{% static 'dist/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js' %}"></script>
+  <script src="{% static 'dist/assets/vendor/hs-show-animation/dist/hs-show-animation.min.js' %}"></script>
+  <script src="{% static 'dist/assets/vendor/hs-go-to/dist/hs-go-to.min.js' %}"></script>
+  <script src="{% static 'dist/assets/vendor/aos/dist/aos.js' %}"></script>
+  <script src="{% static 'dist/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'dist/assets/js/theme.min.js' %}"></script>
+  <script src="{% static 'config.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      new HSHeader('#header').init()
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      new HSMegaMenu('.js-mega-menu', {
+          desktop: {
+            position: 'left'
+          }
+        })
+
+      // INITIALIZATION OF AOS
+      // =======================================================
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+    })()
+  </script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html> 

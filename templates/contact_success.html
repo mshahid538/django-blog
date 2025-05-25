@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Message Sent - M. Goldman Therapy{% endblock %}
+
+{% block content %}
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+  <!-- Hero -->
+  <div class="position-relative">
+    <div class="container content-space-t-3 content-space-t-lg-5 content-space-b-2 content-space-b-lg-3">
+      <div class="row justify-content-lg-center">
+        <div class="col-lg-8">
+          <!-- Card -->
+          <div class="card card-lg">
+            <div class="card-body">
+              <div class="text-center mb-5">
+                <div class="mb-4">
+                  <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                </div>
+                <h1 class="h2">Thank You!</h1>
+                <p class="lead">Your message has been sent successfully.</p>
+              </div>
+
+              <div class="text-center">
+                <p>I will get back to you as soon as possible.</p>
+                <a class="btn btn-primary btn-transition px-4" href="{% url 'home' %}">Return to Home</a>
+              </div>
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+  </div>
+  <!-- End Hero -->
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+{% endblock %} 
